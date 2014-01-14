@@ -12,6 +12,11 @@ script1 = { reference: '1 Corinthians 10:3'}
 script2 = { reference: 'D&C 25:1'}
 scriptures = Scripture.create([script1, script2])
 
+# ACTIVITIES
+act1 = { description: 'Run around in circles so fast until you fall down.  The last one standing wins.' }
+act2 = { description: 'Play Sturdy Birdy game' }
+activities = Activity.create([act1, act2])
+
 # NIGHTS
 night1 = { subject: 'Loving our Neighbor' }
 night2 = { subject: 'Old Testament' }
