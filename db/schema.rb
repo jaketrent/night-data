@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140114153426) do
+ActiveRecord::Schema.define(version: 20140114154045) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(version: 20140114153426) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "night_activities", force: true do |t|
+    t.integer  "night_id"
+    t.integer  "activity_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "night_activities", ["night_id", "activity_id"], name: "index_night_activities_on_night_id_and_activity_id", unique: true, using: :btree
 
   create_table "night_scriptures", force: true do |t|
     t.integer  "night_id"
