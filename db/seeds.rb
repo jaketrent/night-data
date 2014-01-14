@@ -18,6 +18,6 @@ act2 = { description: 'Play Sturdy Birdy game' }
 activities = Activity.create([act1, act2])
 
 # NIGHTS
-night1 = { subject: 'Loving our Neighbor' }
-night2 = { subject: 'Old Testament' }
+night1 = { subject: 'Loving our Neighbor', song_ids: [songs[0].id] }
+night2 = { subject: 'Old Testament', song_ids: [songs[0].id, songs[1].id] }
 nights = Night.create([night1, night2])
