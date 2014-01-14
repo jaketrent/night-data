@@ -4,5 +4,6 @@ class NightSerializer < ActiveModel::Serializer
 
   attributes :id, :subject
   has_many :songs, key: :songs
+  has_many :scriptures, key: :scriptures
 
 end
