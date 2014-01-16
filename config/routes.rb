@@ -4,5 +4,5 @@ NightData::Application.routes.draw do
   resources :scriptures
   resources :activities
 
-  match '/*all', to: 'application#cors_preflight_check', via: [:options]
+  match '/*all', to: 'application#check_preflight', via: [:options]
 end
