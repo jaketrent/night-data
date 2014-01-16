@@ -6,4 +6,23 @@ class ActivitiesController < ApplicationController
   def show
     render json: Activity.find(params[:id])
   end
+
+  def create
+    activity = Activity.new(filter_params)
+    activity.save()
+    render json: activity
+  end
+
+  def update
+    activity = Activity.find(params[:id])
+    activity.update(filter_params)
+    render json: activity
+  end
+
+  private
+
+  def filter_params
+    params.require(:activity).permit :description
+  end
+
 end

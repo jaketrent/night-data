@@ -6,4 +6,23 @@ class ScripturesController < ApplicationController
   def show
     render json: Scripture.find(params[:id])
   end
+
+  def create
+    scripture = Scripture.new(filter_params)
+    scripture.save()
+    render json: scripture
+  end
+
+  def update
+    scripture = Scripture.find(params[:id])
+    scripture.update(filter_params)
+    render json: scripture
+  end
+
+  private
+
+  def filter_params
+    params.require(:scripture).permit :reference
+  end
+
 end
