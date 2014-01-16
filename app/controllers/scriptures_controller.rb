@@ -19,6 +19,11 @@ class ScripturesController < ApplicationController
     render json: scripture
   end
 
+  def destroy
+    scripture = Scripture.find(params[:id])
+    render json: scripture.destroy()
+  end
+
   private
 
   def filter_params

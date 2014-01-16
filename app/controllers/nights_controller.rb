@@ -19,6 +19,11 @@ class NightsController < ApplicationController
     render json: night
   end
 
+  def destroy
+    night = Night.find(params[:id])
+    render json: night.destroy()
+  end
+
   private
 
   def filter_params

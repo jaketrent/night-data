@@ -19,6 +19,11 @@ class ActivitiesController < ApplicationController
     render json: activity
   end
 
+  def destroy
+    activity = Activity.find(params[:id])
+    render json: activity.destroy()
+  end
+
   private
 
   def filter_params
