@@ -8,6 +8,7 @@ class NightsController < ApplicationController
   end
 
   def create
+    convert_incoming_params
     night = Night.new(filter_params)
     night.save()
     render json: night
