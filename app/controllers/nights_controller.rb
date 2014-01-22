@@ -1,4 +1,7 @@
 class NightsController < ApplicationController
+
+  before_filter :authenticate_user!
+
   def index
     render json: Night.all.order(:subject)
   end

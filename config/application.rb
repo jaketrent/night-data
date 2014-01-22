@@ -1,6 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+require_relative '../config/initializers/cors'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -22,5 +23,6 @@ module NightData
 
     config.assets.initialize_on_precompile = false
 
+    config.middleware.insert_before Warden::Manager, Cors
   end
 end
