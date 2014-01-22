@@ -36,6 +36,10 @@ class NightsController < ApplicationController
     params[:night].delete(:songs)
     params[:night].delete(:scriptures)
     params[:night].delete(:activities)
+
+    params[:night][:song_ids] ||= []
+    params[:night][:scripture_ids] ||= []
+    params[:night][:activity_ids] ||= []
   end
 
   def filter_params
