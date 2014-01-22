@@ -1,6 +1,6 @@
 class NightsController < ApplicationController
   def index
-    render json: Night.all
+    render json: Night.all.order(:subject)
   end
 
   def show

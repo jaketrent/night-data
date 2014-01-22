@@ -1,6 +1,6 @@
 class ScripturesController < ApplicationController
   def index
-    render json: Scripture.all
+    render json: Scripture.all.order(:reference)
   end
 
   def show
