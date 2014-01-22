@@ -8,7 +8,6 @@ class NightsController < ApplicationController
   end
 
   def create
-    convert_incoming_params
     night = Night.new(filter_params)
     night.save()
     render json: night
@@ -16,7 +15,6 @@ class NightsController < ApplicationController
 
   def update
     night = Night.find(params[:id])
-    convert_incoming_params
     night.update(filter_params)
     render json: night
   end
@@ -43,6 +41,7 @@ class NightsController < ApplicationController
   end
 
   def filter_params
+    convert_incoming_params
     params.require(:night).permit :subject, song_ids: [], scripture_ids: [], activity_ids: []
   end
 
