@@ -6,9 +6,9 @@ gem 'rails', '4.0.0'
 
 gem 'rails-api'
 gem 'active_model_serializers'
-
-# Use sqlite3 as the database for Active Record
 gem 'pg'
+
+gem 'devise'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
